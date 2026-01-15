@@ -1,53 +1,106 @@
-# MGC and Recommendation Model
+🎵 MGC-Based Music Recommendation System
 
-A machine learning project focused on building and evaluating a recommendation model. This repository contains Jupyter Notebooks, including `p2.ipynb`, demonstrating data processing, modeling, and evaluation for a recommendation system task.
+An intelligent music recommendation system built using Machine Learning, Clustering, and Spotify’s Audio Features. This project groups similar songs using PCA and K-Means and provides personalized music recommendations with real-time Spotify links and previews.
 
----
+📌 Project Overview
 
-## 🧠 Project Overview
+This project implements a music recommendation system using Spotify song features and machine learning techniques. It analyzes musical attributes such as tempo, energy, danceability, loudness, and mood to group similar songs into clusters. Based on a user’s music preference, the system identifies the most suitable cluster and recommends songs that closely match their taste. The system also integrates with the Spotify API to provide live song details, preview links, and Spotify URLs.
 
-`p2.ipynb` includes:
-- Exploratory Data Analysis (EDA)
-- Model Building for Recommendation
-- Results and Evaluation of Appropriate Algorithms
+🎯 Motivation
 
-> 📌 Purpose: To implement and understand the mechanics of a recommendation system — learning how user-item interactions can be modeled to provide personalized suggestions.
+With millions of songs available on music streaming platforms, finding the right music that matches a user’s mood and taste has become challenging. Traditional playlists and genre-based systems are limited in personalization. This project was developed to explore how machine learning and data-driven clustering can be used to create smarter and more personalized music recommendations.
 
----
+🧠 How It Works
 
-## 📌 Motivation
+Spotify song features such as BPM, Energy, Danceability, Valence, Loudness, Acousticness, and Speechiness are used.
 
-Recommendation systems are widely used in applications like online retail, streaming platforms, and personalized content delivery. They help in delivering relevant suggestions based on user behavior and preferences.
+Data is normalized using Min-Max Scaling.
 
-This project aims to:
-- Demonstrate traditional recommendation techniques
-- Compare models and understand evaluation metrics
-- Serve as an educational exploration in building recommender systems
+PCA reduces dimensions for visualization and better clustering.
 
----
+K-Means groups songs into 5 clusters based on similarity.
 
-## 🚀 What This Project Does
+A user’s music preference is mapped to the closest cluster.
 
-- Loads and processes the dataset
-- Computes interaction matrices and similarity measures
-- Trains recommendation model(s)
-- Evaluates performance with standard metrics
-- Outputs sample recommendations
+The most similar songs inside that cluster are selected.
 
----
+Dynamic feature weighting allows personalized tuning.
 
-## 📁 Files in This Repository
+Spotify API fetches real song information and preview links.
 
-| File | Purpose |
-|------|---------|
-| `p2.ipynb` | Core notebook containing exploration + model implementation |
-| `README.md` | Documentation for this project |
+📊 Features Used
 
----
+Beats Per Minute (BPM)
 
-## 🛠️ Dependencies
+Energy
 
-Before running, ensure you have the following installed:
+Danceability
 
-```bash
-!pip install pandas numpy scikit-learn plotly spotipy
+Loudness
+
+Valence (Mood)
+
+Acousticness
+
+Speechiness
+
+🛠️ Tech Stack
+
+Python
+
+Pandas
+
+NumPy
+
+Scikit-Learn
+
+Plotly
+
+Matplotlib
+
+Spotify Web API (Spotipy)
+
+Jupyter Notebook / Google Colab
+
+📦 Dependencies
+
+Install all required libraries using:
+
+pip install pandas numpy scikit-learn plotly spotipy matplotlib
+
+▶️ How to Run
+
+Clone the repository
+
+git clone https://github.com/SHASHAWNK/MGC-and-recommendation-model.git
+
+
+Open p2.ipynb in Jupyter Notebook or Google Colab
+
+Upload the dataset Spotify-2000.csv
+
+Add your Spotify API credentials
+
+Run all cells
+
+🎧 Example Input
+user_input = [120, 0.8, 0.7, -5, 0.9, 0.2, 0.1]
+
+
+This represents a preference for energetic, happy, danceable music.
+
+📤 Output
+
+The system returns:
+
+Song name
+
+Artist
+
+Album
+
+Preview audio
+
+Spotify streaming link
+
+This makes the recommendations fully interactive and real-world usable.
